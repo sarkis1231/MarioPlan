@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import SingedInLinks from './SingedInLinks';
 import SingedOutLinks from './SingedOutLinks';
+import '../../style.css';
 const Navbar = () => {
   return (
     <nav className="nav-wrapper grey darken-3">

@@ -1,7 +1,7 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Navbar from './component/layout/Navbar';
-import Dashboard from './component/layout/Navbar';
+import Dashboard from './component/dasheboard/Dashboard';
 
 class App extends React.Component {
   render() {
@@ -10,8 +10,7 @@ class App extends React.Component {
         <div className="App">
           <Navbar />
           <Switch>
-            <Fragment />
-            <Route path="/" component={Dashboard} />
+            <Route path="/" exact component={Dashboard} />
           </Switch>
         </div>
       </BrowserRouter>
