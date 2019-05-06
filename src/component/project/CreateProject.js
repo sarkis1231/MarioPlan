@@ -1,5 +1,8 @@
+// import history from '../../history';
 import React, {Component} from 'react';
-
+import {createProjectDB} from '../../store/actions/projectActions';
+import {connect} from 'react-redux';
+// import cuid from 'cuid';
 class CreateProject extends Component {
   state = {
     title: '',
@@ -11,11 +14,11 @@ class CreateProject extends Component {
       [e.target.id]: e.target.value,
     });
   };
+
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.createProjectDB(this.state);
   };
-
   render() {
     return (
       <div className="container">
@@ -42,4 +45,7 @@ class CreateProject extends Component {
   }
 }
 
-export default CreateProject;
+export default connect(
+  null,
+  {createProjectDB}
+)(CreateProject);

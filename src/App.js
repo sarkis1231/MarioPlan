@@ -1,16 +1,17 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {Router, Switch, Route} from 'react-router-dom';
 import Navbar from './component/layout/Navbar';
 import Dashboard from './component/dasheboard/Dashboard';
 import ProjectDetails from './component/project/ProjectDetails';
 import SignIn from './component/auth/SignIn';
 import SignUp from './component/auth/SignUp';
 import Createproject from './component/project/CreateProject';
+import history from './history';
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router history={history}>
         <div className="App">
           <Navbar />
           <Switch>
@@ -21,7 +22,7 @@ class App extends React.Component {
             <Route path="/create" component={Createproject} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
